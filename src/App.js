@@ -3,14 +3,16 @@ import "./App.css";
 //import { Audio, Blocks } from "react-loader-spinner";
 //import Bottom from "./Bottom.js";
 import Top from "./Top.js";
-import Middle from "./Middle";
+//import Middle from "./Middle";
+import Search from "./Search";
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
         <Top />
-        <Middle />
+        <Search />
+        {/* <Middle /> */}
       </header>
     </div>
   );

@@ -1,63 +1,44 @@
 import React from "react";
 import "./Top.css";
 import "bootstrap/dist/css/bootstrap.css";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faLocationCrosshairs } from "@fortawesome/free-solid-svg-icons";
 
 export default function Top(props) {
+  function showWeather(event) {
+    event.preventDefault();
+
+    alert("Weather display coming soon....");
+  }
+
   return (
-    <div className="Header">
+    <div className="Top">
       <div className="row">
         <div className="col city">
-          <a href="/" className="up-city-link">
+          <a href="/" className="up-city-link" onClick={showWeather}>
             Dubai
           </a>
         </div>
         <div className="col city">
-          <a href="/" className="up-city-link">
+          <a href="/" className="up-city-link" onClick={showWeather}>
             Barcelona
           </a>
         </div>
         <div className="col city">
-          <a href="/" className="up-city-link">
+          <a href="/" className="up-city-link" onClick={showWeather}>
             Taipei
           </a>
         </div>
         <div className="col city">
-          <a href="/" className="up-city-link">
+          <a href="/" className="up-city-link" onClick={showWeather}>
             Kyiv
           </a>
         </div>
         <div className="col city">
-          <a href="/" className="up-city-link">
+          <a href="/" className="up-city-link" onClick={showWeather}>
             Paris
           </a>
         </div>
       </div>
       <br />
-      <form>
-        <div className="row">
-          <div className="col-8">
-            <div className="mb-3">
-              <input
-                type="search"
-                className="form-control"
-                placeholder="Enter your city..."
-              />
-            </div>
-          </div>
-          <div className="col-1">
-            <a href="/" className="currentLocIcon">
-              <FontAwesomeIcon icon={faLocationCrosshairs} size="xl" />
-            </a>
-          </div>
-          <div className="col-3">
-            <button type="submit" className="btn btn-primary buttonSearch">
-              Search
-            </button>
-          </div>
-        </div>
-      </form>
     </div>
   );
 }
