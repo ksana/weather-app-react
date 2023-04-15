@@ -1,0 +1,39 @@
+.Top {
+  padding: 10px;
+}
+
+.city {
+  font-size: 20px;
+}
+
+.up-city-link {
+  color: black;
+  text-decoration: none;
+  text-shadow: 5px 5px 10px rgba(11, 11, 11, 0.2);
+}
+
+.up-city-link:hover {
+  color: #456281;
+}
+
+.buttonSearch {
+  background: linear-gradient(to top, #bdc2e8 0%, #bdc2e8 1%, #e6dee9 100%);
+  width: 100%;
+  left: -20px;
+  position: relative;
+  color: black;
+  border: none;
+}
+
+.buttonSearch:hover {
+  cursor: hand;
+  color: #456281;
+}
+
+.currentLocIcon {
+  font-size: 20px;
+  left: -83px;
+  top: 5px;
+  position: relative;
+  color: #1e3050;
+}

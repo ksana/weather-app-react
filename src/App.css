@@ -1,4 +1,4 @@
-.App {
+/* .App {
   text-align: center;
 }
 
@@ -26,7 +26,7 @@
 
 .App-link {
   color: #61dafb;
-}
+} */
 
 @keyframes App-logo-spin {
   from {
@@ -35,4 +35,69 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.App {
+  margin: 20px;
+  font-family: "Roboto", sans-serif;
+}
+
+.bottom {
+  margin-left: 16px;
+  margin-right: 16px;
+  position: relative;
+  top: -19px;
+}
+
+.myapp-wrapper {
+  max-width: 800px;
+  margin: 10px auto;
+}
+
+.App {
+  background: linear-gradient(-225deg, #cbbacc 0%, #2580b3 100%);
+  border: 100px;
+  padding: 10px;
+  border-radius: 15px;
+}
+
+h1 {
+  margin: 0;
+  font-size: 32px;
+  font-weight: 100;
+  line-height: 28px;
+  margin-bottom: 5px;
+}
+
+.repo-link {
+  color: darkblue;
+  text-decoration: none;
+}
+
+.weekday {
+  background: linear-gradient(-225deg, #cbbacc 0%, #2580b3 100%);
+  border: transparent;
+}
+
+.dayName {
+  text-align: center;
+}
+
+.card-temp {
+  font-size: 16px;
+  text-align: center;
+  margin: 0;
+}
+
+.card-weather {
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+.card-body {
+  padding: 8px;
+}
+
+.weather-forecast-temperature-min {
+  opacity: 0.6;
 }
