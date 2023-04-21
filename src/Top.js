@@ -1,6 +1,5 @@
 import React from "react";
 import "./Top.css";
-import "bootstrap/dist/css/bootstrap.css";
 
 export default function Top(props) {
   function showWeather(event) {

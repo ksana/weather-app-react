@@ -33,7 +33,7 @@ li {
   font-size: 12pt;
   font-weight: 300;
   position: relative;
-  /* top: -32px; */
+  top: -32px;
 }
 
 .weather-temperature .active {

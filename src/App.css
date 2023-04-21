@@ -15,13 +15,6 @@
   margin: 10px auto;
 }
 
-.App {
-  background: linear-gradient(-225deg, #cbbacc 0%, #2580b3 100%);
-  border: 100px;
-  padding: 10px;
-  border-radius: 15px;
-}
-
 h1 {
   margin: 0;
   font-size: 32px;

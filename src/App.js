@@ -1,21 +1,15 @@
 import "./App.css";
-import Top from "./Top.js";
+import "bootstrap/dist/css/bootstrap.css";
 import CodeLink from "./CodeLink";
-import Search from "./Search";
+import Weather from "./Weather";
 
-function App() {
+export default function App() {
   return (
-    <div>
-      <div className="App">
-        <header className="App-header">
-          <Top />
-          <Search />
-          {/* <Middle /> */}
-        </header>
+    <div className="App">
+      <div className="container">
+        <Weather />
       </div>
       <CodeLink />
     </div>
   );
 }
-
-export default App;

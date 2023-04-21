@@ -1,0 +1,6 @@
+.Weather {
+  background: linear-gradient(-225deg, #cbbacc 0%, #2580b3 100%);
+  border: 100px;
+  padding: 10px;
+  border-radius: 15px;
+}
