@@ -1,3 +1,31 @@
 .Forecast {
   margin-left: 15px;
 }
+
+.weekday {
+  background: linear-gradient(-225deg, #cbbacc 0%, #2580b3 100%);
+  border: transparent;
+}
+
+.dayName {
+  text-align: center;
+}
+
+.card-temp {
+  font-size: 16px;
+  text-align: center;
+  margin: 0;
+}
+
+.card-weather {
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+.card-body {
+  padding: 8px;
+}
+
+.weather-forecast-temperature-min {
+  opacity: 0.6;
+}

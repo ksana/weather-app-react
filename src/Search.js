@@ -41,6 +41,7 @@ export default function Search(props) {
       description: response.data.weather[0].description,
     });
   }
+
   let form = (
     <form onSubmit={handleSearch} className="searchForm">
       <div className="row">
@@ -50,6 +51,7 @@ export default function Search(props) {
               type="search"
               className="form-control"
               placeholder="Enter your city..."
+              autoFocus="on"
               onChange={updateCity}
             />
           </div>
