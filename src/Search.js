@@ -1,9 +1,9 @@
 import React, { useState } from "react";
-import "bootstrap/dist/css/bootstrap.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faLocationCrosshairs } from "@fortawesome/free-solid-svg-icons";
 import Middle from "./Middle";
 import axios from "axios";
+import "./css/Search.css";
 import krakow from "./images/krakow.jpg";
 import weatherIcon from "./images/weather.png";
 
@@ -42,7 +42,7 @@ export default function Search(props) {
     });
   }
   let form = (
-    <form onSubmit={handleSearch}>
+    <form onSubmit={handleSearch} className="searchForm">
       <div className="row">
         <div className="col-8">
           <div className="mb-3">

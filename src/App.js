@@ -1,4 +1,4 @@
-import "./App.css";
+import "./css/App.css";
 import "bootstrap/dist/css/bootstrap.css";
 import CodeLink from "./CodeLink";
 import Weather from "./Weather";

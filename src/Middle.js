@@ -1,5 +1,5 @@
 import React from "react";
-import "./Middle.css";
+import "./css/Middle.css";
 import krakow from "./images/krakow.jpg";
 
 export default function Middle(props) {

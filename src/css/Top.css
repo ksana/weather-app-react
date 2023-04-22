@@ -1,0 +1,18 @@
+.Top {
+  padding: 10px;
+  margin-left: 15px;
+}
+
+.city {
+  font-size: 20px;
+}
+
+.up-city-link {
+  color: black;
+  text-decoration: none;
+  text-shadow: 5px 5px 10px rgba(11, 11, 11, 0.2);
+}
+
+.up-city-link:hover {
+  color: #456281;
+}

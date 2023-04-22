@@ -1,5 +1,5 @@
 import React from "react";
-import "./Forecast.css";
+import "./css/Forecast.css";
 
 export default function Forecast(props) {
   return (
