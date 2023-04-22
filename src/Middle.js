@@ -1,5 +1,6 @@
 import React from "react";
 import "./css/Middle.css";
+import FormattedDate from "./FormattedDate";
 import krakow from "./images/krakow.jpg";
 
 export default function Middle(props) {
@@ -8,10 +9,12 @@ export default function Middle(props) {
       <h1> {props.weatherData.cityName}</h1>
       <ul>
         <li>
-          <h6>{props.weatherData.date}</h6>
+          <h6>
+            <FormattedDate date={props.weatherData.date} />
+          </h6>
         </li>
         <li>
-          <h6>{props.weatherData.description}</h6>
+          <h6 className="text-capitalize">{props.weatherData.description}</h6>
         </li>
       </ul>
       <br />

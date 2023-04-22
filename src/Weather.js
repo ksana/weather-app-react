@@ -8,7 +8,7 @@ export default function Weather(props) {
   return (
     <div className="Weather">
       <Top />
-      <Search />
+      <Search defaultCity="Krakow" />
       <Forecast />
     </div>
   );

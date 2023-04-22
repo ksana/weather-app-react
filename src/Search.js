@@ -4,36 +4,35 @@ import { faLocationCrosshairs } from "@fortawesome/free-solid-svg-icons";
 import Middle from "./Middle";
 import axios from "axios";
 import "./css/Search.css";
-import krakow from "./images/krakow.jpg";
-import weatherIcon from "./images/weather.png";
 
 let apiKey = "445905dadb3d2b0c6f1b916c9d0e3860";
 
 export default function Search(props) {
-  let [city, setCity] = useState("");
-  let [loaded, setLoaded] = useState(false);
-  let [weather, setWeather] = useState({});
+  let [city, setCity] = useState(props.defaultCity);
+  let [weather, setWeather] = useState({ loaded: false });
 
   function handleSearch(event) {
     event.preventDefault();
-
-    if (city) {
-      let url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
-      axios.get(url).then(showWeather);
-    }
+    search();
   }
 
   function updateCity(event) {
     setCity(event.target.value);
   }
 
+  function search() {
+    let url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+    axios.get(url).then(showWeather);
+  }
+
   function showWeather(response) {
-    setLoaded(true);
     console.log(response.data);
     setWeather({
+      loaded: true,
       cityName: response.data.name + ", " + response.data.sys.country,
+      coordinates: response.data.coord,
       temperature: Math.round(response.data.main.temp),
-      date: "Sunday, April 16th, 2023",
+      date: new Date(response.data.dt * 1000),
       wind: response.data.wind.speed,
       humidity: response.data.main.humidity,
       pressure: response.data.main.pressure,
@@ -70,19 +69,7 @@ export default function Search(props) {
     </form>
   );
 
-  let weatherData = {
-    cityName: "Krakow, PL",
-    date: "Sunday, April 16th, 2023",
-    description: "Cloudy",
-    temperature: 10,
-    humidity: 80,
-    wind: 20,
-    pressure: 956,
-    icon: `${weatherIcon}`,
-    cityImage: `${krakow}`,
-  };
-
-  if (loaded) {
+  if (weather.loaded) {
     return (
       <div>
         {form}
@@ -90,11 +77,7 @@ export default function Search(props) {
       </div>
     );
   } else {
-    return (
-      <div>
-        {form}
-        <Middle weatherData={weatherData} />
-      </div>
-    );
+    search();
+    return "Loading....";
   }
 }
