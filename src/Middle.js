@@ -2,6 +2,7 @@ import React from "react";
 import "./css/Middle.css";
 import FormattedDate from "./FormattedDate";
 import krakow from "./images/krakow.jpg";
+import WeatherCurrentTemp from "./WeatherCurrentTemp";
 import WeatherIcon from "./WeatherIcon.js";
 
 export default function Middle(props) {
@@ -27,13 +28,7 @@ export default function Middle(props) {
             </span>
 
             <span className="currentTemperature float-left">
-              {props.weatherData.temperature}
-            </span>
-            <span className="units">
-              <a href="/" className="active">
-                °C{" "}
-              </a>
-              |<a href="/">°F</a>
+              <WeatherCurrentTemp celcius={props.weatherData.temperature} />
             </span>
           </div>
         </div>

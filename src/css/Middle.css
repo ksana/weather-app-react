@@ -28,11 +28,6 @@
   top: -32px;
 }
 
-.weather-temperature .active {
-  color: black;
-  cursor: default;
-  text-decoration: none;
-}
 .currentTemperature {
   display: inline;
   font-size: 58px;
@@ -60,8 +55,6 @@
 .Middle canvas {
   display: inline-block;
   vertical-align: top;
-
   margin-right: 10px;
-
   position: relative;
 }
