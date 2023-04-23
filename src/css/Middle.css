@@ -40,16 +40,6 @@
   line-height: 1;
 }
 
-.currentWeather-icon {
-  display: inline-block;
-  margin-top: unset;
-  vertical-align: top;
-  width: 80px;
-  height: 80px;
-  top: -9px;
-  position: relative;
-}
-
 .cityImage {
   border-radius: 5px;
   position: relative;
@@ -65,4 +55,13 @@
   top: -50px;
   position: relative;
   left: -27px;
+}
+
+.Middle canvas {
+  display: inline-block;
+  vertical-align: top;
+
+  margin-right: 10px;
+
+  position: relative;
 }

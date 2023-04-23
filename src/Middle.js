@@ -2,6 +2,7 @@ import React from "react";
 import "./css/Middle.css";
 import FormattedDate from "./FormattedDate";
 import krakow from "./images/krakow.jpg";
+import WeatherIcon from "./WeatherIcon.js";
 
 export default function Middle(props) {
   return (
@@ -21,12 +22,8 @@ export default function Middle(props) {
       <div className="row">
         <div className="col-5">
           <div className="clearfix weather-temperature">
-            <span>
-              <img
-                src={props.weatherData.icon}
-                alt={props.weatherData.description}
-                className="currentWeather-icon float-left"
-              />
+            <span className="float-left">
+              <WeatherIcon code={props.weatherData.icon} />
             </span>
 
             <span className="currentTemperature float-left">
