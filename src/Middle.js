@@ -24,7 +24,7 @@ export default function Middle(props) {
         <div className="col-5">
           <div className="clearfix weather-temperature">
             <span className="float-left">
-              <WeatherIcon code={props.weatherData.icon} />
+              <WeatherIcon code={props.weatherData.icon} size={64} />
             </span>
 
             <span className="currentTemperature float-left">
