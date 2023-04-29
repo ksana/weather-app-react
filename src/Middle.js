@@ -6,6 +6,7 @@ import WeatherCurrentTemp from "./WeatherCurrentTemp";
 import WeatherIcon from "./WeatherIcon.js";
 
 export default function Middle(props) {
+  // console.log("middle=" + props.weatherData);
   return (
     <div className="Middle">
       <h1> {props.weatherData.cityName}</h1>

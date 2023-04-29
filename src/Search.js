@@ -3,6 +3,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faLocationCrosshairs } from "@fortawesome/free-solid-svg-icons";
 import Middle from "./Middle";
 import axios from "axios";
+import Forecast from "./Forecast.js";
 import "./css/Search.css";
 
 let apiKey = "445905dadb3d2b0c6f1b916c9d0e3860";
@@ -26,11 +27,12 @@ export default function Search(props) {
   }
 
   function showWeather(response) {
-    console.log(response.data);
+    //console.log("search = " + response.data);
     setWeather({
       loaded: true,
       cityName: response.data.name + ", " + response.data.sys.country,
-      coordinates: response.data.coord,
+      latitude: response.data.coord.lat,
+      longtitude: response.data.coord.lon,
       temperature: Math.round(response.data.main.temp),
       date: new Date(response.data.dt * 1000),
       wind: response.data.wind.speed,
@@ -74,6 +76,7 @@ export default function Search(props) {
       <div>
         {form}
         <Middle weatherData={weather} />
+        <Forecast lon={weather.longtitude} lat={weather.latitude} />
       </div>
     );
   } else {

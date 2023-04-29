@@ -1,7 +1,7 @@
 import React from "react";
 import Top from "./Top.js";
 import Search from "./Search.js";
-import Forecast from "./Forecast.js";
+
 import "./css/Weather.css";
 
 export default function Weather(props) {
@@ -9,7 +9,6 @@ export default function Weather(props) {
     <div className="Weather">
       <Top />
       <Search defaultCity="Krakow" />
-      <Forecast />
     </div>
   );
 }
