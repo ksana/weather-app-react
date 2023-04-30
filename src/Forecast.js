@@ -10,7 +10,7 @@ export default function Forecast(props) {
   //console.log("inside forecast");
 
   function showForecast(response) {
-    console.log("showForecast=" + response);
+    // console.log("showForecast=" + response);
     setForecast(response.data.daily);
     setLoaded(true);
   }
@@ -19,9 +19,15 @@ export default function Forecast(props) {
     return (
       <div className="Forecast">
         <div className="row">
-          <div className="col">
-            <ForecastDay data={forecast[0]} />
-          </div>
+          {forecast.map(function (dailyForecast, index) {
+            if (index < 7) {
+              return (
+                <div className="col" key={index}>
+                  <ForecastDay data={dailyForecast} />
+                </div>
+              );
+            }
+          })}
         </div>
       </div>
     );
@@ -31,7 +37,7 @@ export default function Forecast(props) {
     let longitude = props.lon;
 
     let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${latitude}&lon=${longitude}&exclude=minutely,hourly&appid=${apiKey}&units=metric`;
-    console.log(apiUrl);
+    //console.log(apiUrl);
     axios.get(apiUrl).then(showForecast);
     return null;
   }

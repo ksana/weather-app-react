@@ -5,14 +5,19 @@ export default function Top(props) {
   function showWeather(event) {
     event.preventDefault();
 
-    alert("Weather display coming soon....");
+    console.log(event.target.name);
   }
 
   return (
     <div className="Top">
       <div className="row">
         <div className="col city">
-          <a href="/" className="up-city-link" onClick={showWeather}>
+          <a
+            href="/"
+            className="up-city-link"
+            onClick={showWeather}
+            name="Dubai"
+          >
             Dubai
           </a>
         </div>
