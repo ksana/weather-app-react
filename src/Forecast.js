@@ -1,14 +1,17 @@
 import React, { useState } from "react";
 import "./css/Forecast.css";
-import WeatherIcon from "./WeatherIcon.js";
+import ForecastDay from "./ForecastDay.js";
 import axios from "axios";
 
 export default function Forecast(props) {
   let [loaded, setLoaded] = useState(false);
-  console.log("inside forecast");
+  let [forecast, setForecast] = useState(null);
+
+  //console.log("inside forecast");
 
   function showForecast(response) {
     console.log("showForecast=" + response);
+    setForecast(response.data.daily);
     setLoaded(true);
   }
 
@@ -17,12 +20,7 @@ export default function Forecast(props) {
       <div className="Forecast">
         <div className="row">
           <div className="col">
-            <WeatherIcon code="01d" size={50} />
-            <h5 className="forecast-dayName"> Thu </h5>
-            <p className="forecast-temperatures">
-              <span className="orecast-temperature-max"> 29° </span>
-              <span className="forecast-temperature-min"> 10° </span>
-            </p>
+            <ForecastDay data={forecast[0]} />
           </div>
         </div>
       </div>
