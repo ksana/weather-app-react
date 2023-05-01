@@ -1,9 +1,10 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faLocationCrosshairs } from "@fortawesome/free-solid-svg-icons";
 import Middle from "./Middle";
 import axios from "axios";
 import Forecast from "./Forecast.js";
+import Top from "./Top.js";
 import "./css/Search.css";
 
 let apiKey = "445905dadb3d2b0c6f1b916c9d0e3860";
@@ -14,12 +15,15 @@ export default function Search(props) {
 
   function handleSearch(event) {
     event.preventDefault();
-    search();
+    let cityReceived = event.target[0].value;
+
+    setCity(cityReceived.trim());
   }
 
-  function updateCity(event) {
-    setCity(event.target.value);
-  }
+  useEffect(() => {
+    search();
+    // eslint-disable-next-line
+  }, [city]);
 
   function search() {
     let url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
@@ -55,7 +59,6 @@ export default function Search(props) {
               className="form-control"
               placeholder="Enter your city..."
               autoFocus="on"
-              onChange={updateCity}
             />
           </div>
         </div>
@@ -76,6 +79,7 @@ export default function Search(props) {
   if (weather.loaded) {
     return (
       <div>
+        <Top setCity={setCity} />
         {form}
         <Middle weatherData={weather} />
         <Forecast lon={weather.longtitude} lat={weather.latitude} />
