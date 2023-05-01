@@ -30,6 +30,7 @@ export default function Search(props) {
     //console.log("search = " + response.data);
     setWeather({
       loaded: true,
+      cityTitle: response.data.name,
       cityName: response.data.name + ", " + response.data.sys.country,
       latitude: response.data.coord.lat,
       longtitude: response.data.coord.lon,

@@ -1,9 +1,10 @@
 import React from "react";
 import "./css/Middle.css";
 import FormattedDate from "./FormattedDate";
-import krakow from "./images/krakow.jpg";
+// import krakow from "./images/krakow.jpg";
 import WeatherCurrentTemp from "./WeatherCurrentTemp";
 import WeatherIcon from "./WeatherIcon.js";
+import CityImage from "./CityImage";
 
 export default function Middle(props) {
   // console.log("middle=" + props.weatherData);
@@ -42,8 +43,11 @@ export default function Middle(props) {
           </ul>
         </div>
         <div className="col-4">
-          <img className="cityImage img-fluid" src={krakow} alt="Krakow" />
-          <small className="current-city-date"></small>
+          {/* // <img className="cityImage img-fluid" src={krakow} alt="Krakow" /> */}
+          <CityImage
+            className="cityImage img-fluid"
+            city={props.weatherData.cityTitle}
+          />
         </div>
       </div>
     </div>
