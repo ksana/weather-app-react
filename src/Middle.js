@@ -22,7 +22,7 @@ export default function Middle(props) {
       </ul>
       <br />
       <div className="row">
-        <div className="col-5">
+        <div className="col-4">
           <div className="clearfix weather-temperature">
             <span className="float-left">
               <WeatherIcon code={props.weatherData.icon} size={64} />
@@ -34,7 +34,7 @@ export default function Middle(props) {
           </div>
         </div>
 
-        <div className="col-3">
+        <div className="col-4">
           <ul>
             <li>Wind: {props.weatherData.wind} m/s</li>
             <li>Humidity: {props.weatherData.humidity} %</li>

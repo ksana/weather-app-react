@@ -8,10 +8,10 @@ export default function Forecast(props) {
   let [forecast, setForecast] = useState(null);
 
   //console.log("inside forecast");
-
+  let result = props.lat || props.lon;
   useEffect(() => {
     setLoaded(false);
-  }, [props.lat || props.lon]);
+  }, [result]);
 
   function showForecast(response) {
     // console.log("showForecast=" + response);
@@ -30,6 +30,8 @@ export default function Forecast(props) {
                   <ForecastDay data={dailyForecast} />
                 </div>
               );
+            } else {
+              return null;
             }
           })}
         </div>
