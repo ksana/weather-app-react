@@ -1,5 +1,4 @@
 import React from "react";
-// import Search from "./Search.js";
 import "./css/Top.css";
 
 export default function Top(props) {

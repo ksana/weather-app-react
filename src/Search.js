@@ -86,7 +86,6 @@ export default function Search(props) {
       </div>
     );
   } else {
-    search();
     return "Loading....";
   }
 }

@@ -7,14 +7,12 @@ export default function Forecast(props) {
   let [loaded, setLoaded] = useState(false);
   let [forecast, setForecast] = useState(null);
 
-  //console.log("inside forecast");
   let result = props.lat || props.lon;
   useEffect(() => {
     setLoaded(false);
   }, [result]);
 
   function showForecast(response) {
-    // console.log("showForecast=" + response);
     setForecast(response.data.daily);
     setLoaded(true);
   }
@@ -43,7 +41,6 @@ export default function Forecast(props) {
     let longitude = props.lon;
 
     let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${latitude}&lon=${longitude}&exclude=minutely,hourly&appid=${apiKey}&units=metric`;
-    //console.log(apiUrl);
     axios.get(apiUrl).then(showForecast);
     return null;
   }

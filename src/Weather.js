@@ -1,5 +1,4 @@
 import React from "react";
-// import Top from "./Top.js";
 import Search from "./Search.js";
 
 import "./css/Weather.css";

@@ -1,13 +1,11 @@
 import React from "react";
 import "./css/Middle.css";
 import FormattedDate from "./FormattedDate";
-// import krakow from "./images/krakow.jpg";
 import WeatherCurrentTemp from "./WeatherCurrentTemp";
 import WeatherIcon from "./WeatherIcon.js";
 import CityImage from "./CityImage";
 
 export default function Middle(props) {
-  // console.log("middle=" + props.weatherData);
   return (
     <div className="Middle">
       <h1> {props.weatherData.cityName}</h1>
@@ -43,7 +41,6 @@ export default function Middle(props) {
           </ul>
         </div>
         <div className="col-4">
-          {/* // <img className="cityImage img-fluid" src={krakow} alt="Krakow" /> */}
           <CityImage
             className="cityImage img-fluid"
             city={props.weatherData.cityTitle}
