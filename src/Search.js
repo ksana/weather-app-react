@@ -33,6 +33,7 @@ export default function Search(props) {
       cityName: response.data.name + ", " + response.data.sys.country,
       latitude: response.data.coord.lat,
       longtitude: response.data.coord.lon,
+      coordinates: response.data.coord,
       temperature: Math.round(response.data.main.temp),
       date: new Date(response.data.dt * 1000),
       wind: response.data.wind.speed,
