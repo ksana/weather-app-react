@@ -7,9 +7,18 @@ export default function CodeLink() {
   return (
     <div className="CodeLink">
       This page is coded by Oksana M, see code in
-      <a href="https://github.com/ksana/weather-app-react">
+      <a
+        href="https://github.com/ksana/weather-app-react"
+        target="_blank"
+        rel="noreferrer"
+      >
         {" "}
-        <FontAwesomeIcon icon={faGithub} color="black" size="xl" />
+        <FontAwesomeIcon
+          icon={faGithub}
+          color="black"
+          size="xl"
+          className="git-link"
+        />
       </a>
     </div>
   );

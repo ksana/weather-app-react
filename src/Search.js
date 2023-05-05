@@ -45,7 +45,6 @@ export default function Search(props) {
   }
 
   function showWeather(response) {
-    //console.log("search = " + response.data);
     setWeather({
       loaded: true,
       cityTitle: response.data.name,
