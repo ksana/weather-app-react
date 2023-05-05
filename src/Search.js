@@ -30,6 +30,20 @@ export default function Search(props) {
     axios.get(url).then(showWeather);
   }
 
+  function searchCurrentPosition(position) {
+    let lat = position.coords.latitude;
+    let lon = position.coords.longitude;
+    let url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}&units=metric`;
+    //console.log(url);
+    axios.get(url).then(showWeather);
+  }
+
+  function getCurrPosition(event) {
+    event.preventDefault();
+
+    navigator.geolocation.getCurrentPosition(searchCurrentPosition);
+  }
+
   function showWeather(response) {
     //console.log("search = " + response.data);
     setWeather({
@@ -64,7 +78,11 @@ export default function Search(props) {
         </div>
         <div className="col-1">
           <a href="/" className="currentLocIcon">
-            <FontAwesomeIcon icon={faLocationCrosshairs} size="xl" />
+            <FontAwesomeIcon
+              icon={faLocationCrosshairs}
+              size="xl"
+              onClick={getCurrPosition}
+            />
           </a>
         </div>
         <div className="col-3">
